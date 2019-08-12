@@ -1,0 +1,24 @@
+{
+  "name": "TimeOut",
+  "version": "1.1",
+  "description": "Set usage limit for website deemed unproductive.",
+  "permissions": [
+    "tabs", 
+    "storage", 
+    "webRequest", 
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_title": "Show Tabs in this Process",
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js",
+      "block.js"
+    ]
+  },
+  "manifest_version": 2
+}
