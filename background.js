@@ -1,16 +1,11 @@
-let bannedUrls = [
-  "https://2twitter.com/*",
-  "https://www2.twitch.tv/*"
-]
-
-let array = ['aq', 'cd']
+/* let array = ['aq', 'cd']
 
 function init(){
   localStorage.setItem("bannedSites", JSON.stringify(array));
 }
-
+ */
 function Update(t, tabId, url){
-  console.log(t, tabId, url)
+  //console.log(t, tabId, url)
 }
 
 function HandleUpdate(tabId, changeInfo, tab){
@@ -22,4 +17,4 @@ function HandleUpdate(tabId, changeInfo, tab){
 chrome.tabs.onUpdated.addListener(HandleUpdate);
 chrome.tabs.onRemoved.addListener(HandleUpdate);
 chrome.tabs.onReplaced.addListener(HandleUpdate);
-document.addEventListener('DOMContentLoaded', init);
+//document.addEventListener('DOMContentLoaded', init);

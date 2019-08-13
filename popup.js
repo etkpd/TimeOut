@@ -26,15 +26,25 @@ function displayWebInfo(website, tab, outputDiv) {
   if (tab.favIconUrl != undefined) {
     outputDiv.innerHTML += "<img src='chrome://favicon/" + tab.url + "'>\n";
   }
-  outputDiv.innerHTML +=
-    "<b>" + website + "<br>\n";
+  outputDiv.innerHTML += website;
 }
 
 
 function handleBanButtonClick () {
-  console.log('ban button was clicked')
+  if(localStorage["bannedSites"] === undefined){
+    localStorage.setItem("bannedSites", JSON.stringify([])); 
+  } 
   let listOfBannedSites = JSON.parse(localStorage.getItem("bannedSites"));
-  console.log(listOfBannedSites)
+  listOfBannedSites.push(website + '*')  
+  localStorage.setItem("bannedSites", JSON.stringify(listOfBannedSites));
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.update(tabs[0].id, {url: tabs[0].url});
+  });
+
+  let message = {
+    arrayOfBannedSites: listOfBannedSites
+  };
+  chrome.runtime.sendMessage(message)
 }
 
 
