@@ -8,12 +8,12 @@ if(bannedUrls!==null){
     ["blocking"]
   );
 }
-chrome.runtime.onMessage.addListener(receiver);
+chrome.runtime.onMessage.addListener(setBanSites);
 
-function receiver(request, sender, sendResponse){
+function setBanSites(request, sender, sendResponse){
   chrome.webRequest.onBeforeRequest.removeListener(
     banSites
-  );
+  )
   chrome.webRequest.onBeforeRequest.addListener(
     banSites,
     {urls: request.arrayOfBannedSites

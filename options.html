@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TimeOut Options</title>
+    <link rel="stylesheet" href="options.css" />
+    <script src="options.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <h1>TimeOut Options</h1>
+    </div>
+    <div id="settings">
+      <table>
+        <tbody>
+          <tr>
+            <th>
+            Sites to Ban<br />
+            (one per line)
+            </th>
+            <td><textarea id="blacklist"></textarea></td>
+            <td id="blacklist-description" class="description">Web Timer will not track any sites you put on this list. Any existing data for sites on the list will be removed.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="footer">
+      <button id="save-button">Save</button>
+      <span id="status"></span>
+    </div>
+  </body>
+</html>
