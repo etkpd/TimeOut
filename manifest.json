@@ -16,9 +16,11 @@
   },
   "background": {
     "scripts": [
+      "common.js",
       "background.js",
       "block.js"
-    ]
+    ],
+    "persistent": true
   },
   "options_page": "options.html",
   "manifest_version": 2
